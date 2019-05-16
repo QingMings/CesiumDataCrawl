@@ -6,21 +6,23 @@ var ESRIMapsImageDownloaderUtil = require('./../ESRIMapsImageDownloaderUtil');
 var esriMapsImageDownloaderUtil = new ESRIMapsImageDownloaderUtil({});
 
 var downLoader = new MutilDownloader({
-    maxDownloadTask:30,
+    maxDownloadTask:50,
     checkDownloadTaskInterval:100
 });
 
-var savePath =__dirname + "/../CesiumData/Image/ESRIMaps";
+// var savePath =__dirname + "/../CesiumData/Image/ESRIMaps";
+var savePath =__dirname + "/../CesiumData/Image/ESRIMapsChina";
 
 var qq = parseInt(process.argv[2]);
 
 console.log(qq);
 
-var startLevel = 6; // parseInt(process.argv[2]);
-var endLevel = 6;   // parseInt(process.argv[3]);
+var startLevel = 1; // parseInt(process.argv[2]);
+var endLevel = 5;   // parseInt(process.argv[3]);
 
 // var requestRect = require('./../RequestRect/WorldWebMercatorRect'); // require(process.argv[4]);
-var requestRect = require('./../RequestRect/ESRIWorld');
+// var requestRect = require('./../RequestRect/ESRIWorld');
+var requestRect = require('./../RequestRect/ChinaRect'); // require(process.argv[4]);
 requestRect = requestRect.RequestRect();
 
 console.log("startLevel = " + startLevel);
